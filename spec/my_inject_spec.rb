@@ -18,7 +18,7 @@ describe 'my_inject' do
     expect([27, 3, 9].my_inject { |mult, num| mult / num }).to eq 1   
   end
 
-  it 'print longest word in array' do
+  it 'print shortest word in array' do
     expect(%w{ donkey dog sheep }.my_inject do |memo, word|
       memo.length < word.length ? memo : word
     end).to eq "dog"
