@@ -1,6 +1,6 @@
 class Array
 
- def my_inject(accumulator = nil) 
+ def my_inject_iterator(accumulator = nil) 
   i = accumulator == nil ? 1 : 0
   accumulator = self.first if accumulator.nil?
   self[i..-1].each do |element|
