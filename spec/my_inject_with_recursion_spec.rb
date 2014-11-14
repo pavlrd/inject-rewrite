@@ -26,4 +26,21 @@ describe 'my inject with recurion method' do
       memo.length < word.length ? memo : word
     end).to eq "dog"
   end
+
+   it 'return nil if array is empty' do
+    expect([].my_inject_recursion {|sum, num| sum + num}). to eq nil
+  end
+
+  it 'return element itself if it\'s one in array' do
+    expect([1].my_inject_recursion).to eq 1
+  end
+
+  it 'return accumulator itself if object given is empty' do
+    expect([].my_inject_recursion(10) {|sum, num| sum + num}).to eq 10
+  end
+
+  it 'not change state of the given object' do
+    numbers.my_inject_recursion {|div, num| div / num}
+    expect(numbers).to eq numbers2
+  end
 end

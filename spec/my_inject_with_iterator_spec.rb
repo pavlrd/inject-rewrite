@@ -2,8 +2,8 @@ require 'my_inject_with_iterator'
 
 describe 'my inject with iterator' do
 
-  let (:numbers) {[17, 21, 3, 59, 12]}
-  let (:numbers2) {[17, 21, 3, 59, 12]}
+  let (:numbers)  { [17, 21, 3, 59, 12] }
+  let (:numbers2) { [17, 21, 3, 59, 12] }
 
   it 'print result of sum of elements' do
     expect(numbers.my_inject_iterator(10) {|sum, num| sum + num}).to eq numbers.inject(10) {|sum, num| sum + num}
