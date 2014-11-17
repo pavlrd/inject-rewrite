@@ -3,7 +3,6 @@ require 'my_inject_with_iterator'
 describe 'my inject with iterator' do
 
   let (:numbers)  { [17, 21, 3, 59, 12] }
-  let (:numbers2) { [17, 21, 3, 59, 12] }
 
   it 'print result of sum of elements' do
     expect(numbers.my_inject_iterator(10) {|sum, num| sum + num}).to eq numbers.inject(10) {|sum, num| sum + num}
@@ -35,12 +34,17 @@ describe 'my inject with iterator' do
     expect([1].my_inject_iterator).to eq 1
   end
 
-  it 'return accumulator itself if object given is empty' do
+  it 'return accumulator itself if given object is empty' do
     expect([].my_inject_iterator(10) {|sum, num| sum + num}).to eq 10
   end
 
   it 'not change state of the given object' do
+    numbers2 = [17, 21, 3, 59, 12]
     numbers.my_inject_iterator {|div, num| div / num}
     expect(numbers).to eq numbers2
+  end
+
+  it 'takes symbol as an argument' do 
+    expect(numbers.my_inject_iterator(&:+)).to eq 112
   end
 end
