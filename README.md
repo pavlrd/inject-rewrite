@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/palyrex/inject-rewrite/badges/gpa.svg)](https://codeclimate.com/github/palyrex/inject-rewrite)
+
 ####Task_1, Week_2 at Makers Academy
 
 **Goal is to rewrite Inject method of Array class by using two approaches:**
