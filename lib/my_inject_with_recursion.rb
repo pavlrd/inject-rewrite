@@ -1,29 +1,39 @@
 class Array
 
-	def accumulator_is_string?
-		@accumulator.is_a?(String)
+	def initial_not_given?
+		@initial.is_a?(String)
 	end
 
-	def accumulator_is_number?
-		@accumulator.is_a?(Integer) || @accumulator.is_a?(Float)
+	def setup_inject(initial)
+		@initial = initial
+    @dupl_self = self.dup
 	end
 
-  def my_inject_recursion(number = "", &block)
-  	@accumulator = number
-    object = self.dup
+	def set_number
+		initial_not_given? ? @number = self.first : @number = @dupl_self.shift
+	end
 
-		if accumulator_is_string?
-			return nil if object.empty?
-			return object.first if self.length == 1
-			return yield(object.shift, object.shift) if object.length == 2 
-		elsif accumulator_is_number?
-			return @accumulator if self.empty?
-			return yield(@accumulator, object.shift) if object.length == 1
-		end
+	def recursion(&block)
+    @dupl_self.my_inject_recursion(yield(@initial, @number), &block)
+	end
 
-    @accumulator = object.shift if accumulator_is_string?
-    number = accumulator_is_string? ? object[1] : object.shift
-    object.my_inject_recursion(yield(@accumulator, number), &block)
+	def self_one_digit_no_initial
+		self.length == 1 && initial_not_given?
+	end
+
+	def result_when_self_empty
+		return nil if initial_not_given?
+		return @initial
+	end
+
+  def my_inject_recursion(initial = "", &block)
+  	setup_inject(initial)
+  	return result_when_self_empty if self.empty?
+  	return self.first if self_one_digit_no_initial
+		return yield(self[0], self[1]) if self.length == 2 && initial_not_given?
+		@initial = @dupl_self.shift if initial_not_given?
+		set_number
+		recursion(&block)
   end
 end
 
