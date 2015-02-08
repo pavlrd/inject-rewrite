@@ -21,9 +21,7 @@ describe 'my inject with recurion method' do
   end
 
   it 'print shortest word in array' do
-    expect(%w{ donkey dog sheep }.my_inject_recursion do |memo, word|
-      memo.length < word.length ? memo : word
-    end).to eq "dog"
+    expect(%w{ donkey dog sheep }.my_inject_recursion { |memo, word| memo.length < word.length ? memo : word }).to eq "dog"
   end
 
    it 'return nil if array is empty' do
