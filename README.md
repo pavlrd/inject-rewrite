@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/palyrex/inject-rewrite/badges/gpa.svg)](https://codeclimate.com/github/palyrex/inject-rewrite)
+[![Code Climate](https://codeclimate.com/github/palyrex/inject-rewrite/badges/gpa.svg)](https://codeclimate.com/github/palyrex/inject-rewrite) [![Test Coverage](https://codeclimate.com/github/palyrex/inject-rewrite/badges/coverage.svg)](https://codeclimate.com/github/palyrex/inject-rewrite)
 
 ####Task_1, Week_2 at Makers Academy
 
