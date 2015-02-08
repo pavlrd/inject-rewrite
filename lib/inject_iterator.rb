@@ -32,7 +32,7 @@ class Array
     return nil if self.empty? && number_present
     argument_check
     block_runner(&block)
-   end
+  end
 end
 
 
