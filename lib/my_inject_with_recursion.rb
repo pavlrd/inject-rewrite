@@ -1,5 +1,5 @@
 class Array
-
+  
   def my_inject_recursion(accumulator = nil, &block)
     return nil if self.empty? && accumulator == nil
     return accumulator if !accumulator.nil? && self.empty?
@@ -10,6 +10,6 @@ class Array
     accumulator = object.shift if accumulator.nil?
     number = accumulator.nil? ? object[1] : object.shift
     object.my_inject_recursion(yield(accumulator, number), &block)
-end
+  end
 end
 

@@ -45,6 +45,6 @@ describe 'my inject with recurion method' do
   end
 
   it 'takes symbol as an argument' do 
-    expect(numbers.my_inject_iterator(&:+)).to eq 140
+    expect(numbers.my_inject_recursion(&:+)).to eq 140
   end
 end
