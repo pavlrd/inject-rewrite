@@ -17,7 +17,7 @@ class Array
 	def recursion(&block)
     @dupl_self.my_inject_recursion(yield(@initial, @number), &block)
 	end
-
+	
 	def self_one_number_no_initial  
 		self.length == 1 && initial_not_given?
 	end
