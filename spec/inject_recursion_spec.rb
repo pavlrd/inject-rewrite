@@ -1,6 +1,6 @@
-require 'my_inject_with_recursion'
+require 'inject_recursion'
 
-describe 'my inject with recurion method' do
+describe 'inject with recurion method' do
 
   let(:numbers)  { [27, 12, 9, 87, 5] }
 

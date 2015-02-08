@@ -1,6 +1,6 @@
-require 'my_inject_with_iterator'
+require 'inject_iterator'
 
-describe 'my inject with iterator' do
+describe 'inject with iterator' do
 
   let (:numbers)  { [17, 21, 3, 59, 12] }
 
