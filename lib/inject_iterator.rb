@@ -26,7 +26,8 @@ class Array
     @result 
   end
 
-  def my_inject_iterator(given_number = "", &block)
+  # main inject method
+  def inject_iterator(given_number = "", &block)
     @number = given_number;
     return nil if self.empty? && number_present
     argument_check
